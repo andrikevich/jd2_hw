@@ -1,11 +1,13 @@
-package by.andrikevich.j2eeStudy;
+package it.academy;
 
-
+/**
+ * Hello world!
+ *
+ */
 public class App 
 {
     public static void main( String[] args )
     {
-
         System.out.println( "Hello World!" );
     }
 }

@@ -9,23 +9,21 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-
+@RunWith(MockitoJUnitRunner.class)
 public class SimpleCalcTest
 {
-
-
+@Mock
+    SimpleCalc calc;
 
     @Test
     public void sumDiffNumbers()
     {
-        SimpleCalc calc = mock(SimpleCalc.class);
         when(calc.sum(3,5)).thenReturn(8);
         int result = calc.sum(3,5);
         assertEquals(8,result);
     }
         @Test
     public void minusDiffNumbers (){
-        SimpleCalc calc = mock(SimpleCalc.class);
         when(calc.minus(3,5)).thenReturn(-2);
         int result = calc.minus(3,5);
         assertEquals(-2,result);
