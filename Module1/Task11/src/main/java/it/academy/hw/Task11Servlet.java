@@ -23,8 +23,6 @@ public class Task11Servlet extends HttpServlet {
         writer.println("***********************");
         writer.println("changes from master");
 
-        writer.println("Changes from Task13!!!");
-
 
     }
 }
