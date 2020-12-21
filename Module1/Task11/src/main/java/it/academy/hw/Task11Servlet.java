@@ -14,5 +14,9 @@ public class Task11Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         final PrintWriter writer = resp.getWriter();
         writer.println("Hello  from homework Task11 from class: " + this.getClass().getName());
+
+        
+        writer.println("***********************");
+        writer.println("changes from master");
     }
 }
