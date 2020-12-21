@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 
 @WebServlet (name="task11",  urlPatterns = "/test")
 public class Task11Servlet extends HttpServlet {
@@ -15,8 +16,13 @@ public class Task11Servlet extends HttpServlet {
         final PrintWriter writer = resp.getWriter();
         writer.println("Hello  from homework Task11 from class: " + this.getClass().getName());
 
+        writer.println("-------------------");
+        writer.println(new Date());
+
         
         writer.println("***********************");
         writer.println("changes from master");
+
+
     }
 }
