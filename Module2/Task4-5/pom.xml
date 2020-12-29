@@ -7,7 +7,7 @@
     <groupId>it.academy</groupId>
     <artifactId>Task4</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
 
     <dependencies>
@@ -39,7 +39,7 @@
                         <configuration>
                             <changeLogFile>src/main/resources/changelog-product.xml</changeLogFile>
                             <driver>com.mysql.cj.jdbc.Driver</driver>
-                            <url>jdbc:mysql://localhost:3306/listexpenses?serverTimezone=UTC&amp;createDatabaseIfNotExist=true</url>
+                            <url>jdbc:mysql://localhost:3306/listexpenses?serverTimezone=UTC&amp;createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf8</url>
                             <username>root</username>
                             <password>root</password>
                         </configuration>

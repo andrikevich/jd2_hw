@@ -1,1 +1,1 @@
-c:\hw\Module2\Task4-5>C:\java\jdk-11\bin\java.exe  -classpath C:\hw\Module2\Task4-5\target\classes;C:\Users\dmitry_an\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar it.academy.module2.AppTask5 "20" "2020-12-18" "29000" "2"
+C:\java\jdk-11\bin\java.exe  -classpath C:\hw\Module2\Task4-5\target\classes;C:\Users\dmitry_an\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar it.academy.module2.AppTask5 "20" "2020-12-18" "29000" "2"
