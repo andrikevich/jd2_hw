@@ -22,13 +22,16 @@ public class FormServlet extends HttpServlet {
         String nameChecked = checker.nameChecker(name);
         String phoneChecked =checker.phoneChecker(phone);
         String emailChecked = checker.emailChecker(email);
-
-       
+        
+        //todo: Realize field checker if have spare time
         PrintWriter writer = resp.getWriter();
+        if (name.trim().length() == 0 || (phone.trim().length() == 0 && email.trim().length() == 0)){
+            writer.println("You didn't fill all required fields !!! Please see comments below form");
+        }else
         if (!nameChecked.equals(checker.CHECKED_OK)){
             writer.println(nameChecked);
         }else  if (!phoneChecked.equals(checker.CHECKED_OK)) {
-                writer.println(phoneChecked);
+            writer.println(phoneChecked);
         }else if (!emailChecked.equals(checker.CHECKED_OK)){
             writer.println(emailChecked);
         } else {
