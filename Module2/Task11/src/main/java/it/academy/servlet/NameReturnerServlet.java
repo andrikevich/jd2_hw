@@ -22,8 +22,7 @@ public class NameReturnerServlet extends HttpServlet {
         out.println("<html><head><title>First Servlet</title></head>");
         out.println("<body><h1>Приветствую пользователь ");
         UserAgent userAgent = UserAgent.parseUserAgentString(request.getHeader("User-Agent"));
-        //out.println(request.getHeader("User-Agent"));
-        out.println(userAgent.toString());
+        out.println(userAgent.getBrowser().getGroup());
 
         out.println("</h1>");
         out.println("</body></html>");
