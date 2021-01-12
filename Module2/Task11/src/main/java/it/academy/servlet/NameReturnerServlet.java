@@ -1,5 +1,7 @@
 package it.academy.servlet;
 
+import eu.bitwalker.useragentutils.UserAgent;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +21,10 @@ public class NameReturnerServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<html><head><title>First Servlet</title></head>");
         out.println("<body><h1>Приветствую пользователь ");
-        out.println(request.getHeader("User-Agent"));
+        UserAgent userAgent = UserAgent.parseUserAgentString(request.getHeader("User-Agent"));
+        //out.println(request.getHeader("User-Agent"));
+        out.println(userAgent.toString());
+
         out.println("</h1>");
         out.println("</body></html>");
     }
