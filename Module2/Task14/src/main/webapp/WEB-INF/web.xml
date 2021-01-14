@@ -6,29 +6,47 @@
          version="4.0">
 
 
-
-    <servlet>
-        <servlet-name>ExpensesServlet</servlet-name>
-        <servlet-class>it.academy.module2.servlet.DataBaseServlet</servlet-class>
-        <init-param>
+        <context-param>
             <param-name>driverClass</param-name>
             <param-value>com.mysql.cj.jdbc.Driver</param-value>
-        </init-param>
-        <init-param>
+        </context-param>
+        <context-param>
             <param-name>urlConnection</param-name>
             <param-value>jdbc:mysql://localhost:3306/listexpenses?serverTimezone=UTC</param-value>
-        </init-param>
-        <init-param>
+        </context-param>
+        <context-param>
             <param-name>username</param-name>
             <param-value>root</param-value>
-        </init-param>
-        <init-param>
+        </context-param>
+        <context-param>
             <param-name>password</param-name>
             <param-value>root</param-value>
-        </init-param>
+        </context-param>
+
+
+    <servlet>
+        <servlet-name>ExpensesServletTask14</servlet-name>
+        <servlet-class>it.academy.module2.servlet.DataBaseServletTask14</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ExpensesServlet</servlet-name>
+        <servlet-name>ExpensesServletTask14</servlet-name>
         <url-pattern>/expenses</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ExpensesServletTask15</servlet-name>
+        <servlet-class>it.academy.module2.servlet.DataBaseServletTask15</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExpensesServletTask15</servlet-name>
+        <url-pattern>/expensesTask15</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ExpensesServletTask17</servlet-name>
+        <servlet-class>it.academy.module2.servlet.DataBaseServletTask17</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExpensesServletTask17</servlet-name>
+        <url-pattern>/expensesTask17</url-pattern>
     </servlet-mapping>
 </web-app>
