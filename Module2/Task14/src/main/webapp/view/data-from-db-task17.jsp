@@ -15,10 +15,10 @@
  </tr>
     <c:forEach var="expense" items="${expenses}">
      <tr>
-        <td align="center">${expense.num}</td>
-        <td align="center">${expense.paydate}</td>
-        <td align="center">${expense.value}</td>
-        <td align="center">${expense.receiverNum}</td>
+        <td align="center"><c:out value="${expense.num}"/></td>
+        <td align="center"><c:out value="${expense.paydate}"/></td>
+        <td align="center"><c:out value="${expense.value}"/></td>
+        <td align="center"><c:out value="${expense.receiverNum}"/></td>
      </tr>
     </c:forEach>
 
