@@ -34,7 +34,6 @@ public class DataBaseServletTask17 extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Expense> expenses = new ArrayList<>();
         expenses = dao.getExpenses();
-        System.out.println(expenses);
         req.setAttribute("expenses",expenses);
         req.getRequestDispatcher("view/data-from-db-task17.jsp").forward(req,resp);
 
