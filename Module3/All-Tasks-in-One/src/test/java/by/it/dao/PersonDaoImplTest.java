@@ -1,15 +1,20 @@
 package by.it.dao;
 
+import java.io.Serializable;
+
+import javax.persistence.PersistenceException;
+
 import org.hibernate.ObjectNotFoundException;
 import org.junit.Assert;
 import org.junit.Test;
-import by.it.pojos.*;
 
-import java.io.Serializable;
+import by.it.pojos.Person;
 
-public class PersonDaoImplTest {
+public class PersonDaoImplTest extends BaseTest{
 
     PersonDaoImpl dao = new PersonDaoImpl("hibernate.cfg.test.xml");
+    
+    //testCases without DbUnit
 
     @Test
     public void savePerson() {
@@ -35,4 +40,34 @@ public class PersonDaoImplTest {
         dao.deletePerson(savedPerson);
         Assert.assertNull(dao.loadPerson((Integer) actualId));
     }
+    
+    
+    //------------------------------------------
+    //testCases using DbUnit
+    
+    @Test
+    public void loadPersonWithDbUnit() {
+        //Given:
+        cleanInsert("PersonTest.xml");
+        //When
+        Person loadedPerson = dao.loadPerson(999);
+        //Then
+        Assert.assertEquals("XavierSmith",loadedPerson.getName()+loadedPerson.getSurname());
+        deleteDataset();
+    }
+    
+    @Test (expected = PersistenceException.class)
+    public void deletePersonWithDbUnit() {
+    	cleanInsert("PersonTest.xml");
+    	Person loadedPerson = dao.loadPerson(999);
+    	dao.deletePerson(loadedPerson);
+    	Assert.assertNull(dao.loadPerson(999));
+    }
+    
+    
+    @org.junit.After
+    public void tearDown() {
+        dao.getSessionFactory().close();
+    }
+
 }

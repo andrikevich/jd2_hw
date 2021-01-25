@@ -1,30 +1,40 @@
 package by.it.dao;
 
-import by.it.exeption.NoSuchPersonExeption;
-import by.it.pojos.Person;
-import by.it.util.HibernateSessionFactoryReceiver;
-import by.it.util.HibernateUtil;
+import java.io.Serializable;
+
+import javax.persistence.FlushModeType;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import javax.persistence.FlushModeType;
-import java.io.Serializable;
+import by.it.exeption.NoSuchPersonExeption;
+import by.it.pojos.Person;
+import by.it.util.HibernateSessionFactoryReceiver;
 
 public class PersonDaoImpl implements PersonDao{
 
     private String xmlCfgConfig;
+    private SessionFactory sessionFactory;
+    
+    
+    
 
-    public PersonDaoImpl(String xmlCfgConfig) {
+    public String getXmlCfgConfig() {
+		return xmlCfgConfig;
+	}
+
+	public PersonDaoImpl(String xmlCfgConfig) {
         this.xmlCfgConfig = xmlCfgConfig;
+        this.sessionFactory = new HibernateSessionFactoryReceiver(xmlCfgConfig).getSessionFactory();
     }
 
-    private SessionFactory getSessionFactory () {
-        return new HibernateSessionFactoryReceiver(xmlCfgConfig).getSessionFactory();
+    SessionFactory getSessionFactory () {
+        return sessionFactory;
     }
 
     @Override
     public Serializable savePerson(Person person) {
-        Session session = getSessionFactory().openSession();
+        Session session = sessionFactory.openSession();
         if (session.isDirty()) session.flush();
         session.setFlushMode(FlushModeType.AUTO);
         session.beginTransaction();
@@ -36,7 +46,7 @@ public class PersonDaoImpl implements PersonDao{
 
     @Override
     public void deletePerson(Person person) {
-        Session session = getSessionFactory().openSession();
+        Session session = sessionFactory.openSession();
         if (session.isDirty()) session.flush();
         session.setFlushMode(FlushModeType.AUTO);
         session.beginTransaction();
@@ -47,7 +57,7 @@ public class PersonDaoImpl implements PersonDao{
 
     @Override
     public Person loadPerson(int id) {
-        Session session = getSessionFactory().openSession();
+        Session session = sessionFactory.openSession();
         if (session.isDirty()) session.flush();
         session.setFlushMode(FlushModeType.AUTO);
         session.beginTransaction();
