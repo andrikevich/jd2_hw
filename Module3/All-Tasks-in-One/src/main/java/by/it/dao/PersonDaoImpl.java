@@ -47,8 +47,10 @@ public class PersonDaoImpl implements PersonDao{
     @Override
     public void deletePerson(Person person) {
         Session session = sessionFactory.openSession();
+        
         if (session.isDirty()) session.flush();
         session.setFlushMode(FlushModeType.AUTO);
+        
         session.beginTransaction();
         session.delete(person);
         session.getTransaction().commit();;
