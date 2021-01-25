@@ -64,8 +64,9 @@ public class PersonDaoImplTest extends BaseTest {
 		cleanInsert("PersonTest.xml");
 		Person loadedPerson = dao.loadPerson(999);
 		dao.deletePerson(loadedPerson);
-		Assert.assertNull(dao.loadPerson(999));
 		deleteDataset();
+		Assert.assertNull(dao.loadPerson(999));
+		
 	}
 
 	@org.junit.After
