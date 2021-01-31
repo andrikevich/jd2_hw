@@ -21,7 +21,7 @@ public class PersonDaoImplTest extends BaseTest {
 	@Test
 	public void savePerson() {
 
-		Person savedPerson = new Person(null, 49, "Sandra", "Bullok");
+		Person savedPerson = new Person(49, "Sandra", "Bullok");
 		Serializable actualId = dao.savePerson(savedPerson);
 		Assert.assertNotNull(actualId);
 		dao.deletePerson(savedPerson);
@@ -29,7 +29,7 @@ public class PersonDaoImplTest extends BaseTest {
 
 	@Test
 	public void loadPerson() {
-		Person savedPerson = new Person(null, 50, "Tom", "Cruze");
+		Person savedPerson = new Person( 50, "Tom", "Cruze");
 		Serializable actualId = dao.savePerson(savedPerson);
 		Person loadedPerson = dao.loadPerson((Integer) actualId);
 		Assert.assertEquals(savedPerson.getName() + savedPerson.getSurname(),
@@ -39,7 +39,7 @@ public class PersonDaoImplTest extends BaseTest {
 
 	@Test(expected = ObjectNotFoundException.class)
 	public void deletePerson() {
-		Person savedPerson = new Person(null, 50, "Angelina", "Jolly");
+		Person savedPerson = new Person( 50, "Angelina", "Jolly");
 		Serializable actualId = dao.savePerson(savedPerson);
 		dao.deletePerson(savedPerson);
 		Assert.assertNull(dao.loadPerson((Integer) actualId));

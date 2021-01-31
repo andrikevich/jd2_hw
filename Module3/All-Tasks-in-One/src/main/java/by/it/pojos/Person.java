@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
@@ -20,7 +17,7 @@ import java.io.Serializable;
 public class Person implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column
@@ -31,4 +28,21 @@ public class Person implements Serializable {
 
     @Column
     private String surname;
+
+    public Person(Integer age, String name, String surname) {
+        this.age = age;
+        this.name = name;
+        this.surname = surname;
+    }
+
+    // this part of code is according to Task 7 of Module-3
+    @Embedded
+    private Adress adress;
+
+    public Person(Integer age, String name, String surname, Adress adress) {
+        this.age = age;
+        this.name = name;
+        this.surname = surname;
+        this.adress = adress;
+    }
 }

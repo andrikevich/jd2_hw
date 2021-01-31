@@ -93,4 +93,19 @@ public class Employee {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
+
+
+    // this part of code is according to Task 7 of Module-3
+
+
+    public Employee(String department, String login, String password, String phoneNumber, Adress adress) {
+        this.department = department;
+        this.login = login;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.adress = adress;
+    }
+
+    @Embedded
+    private Adress adress;
 }

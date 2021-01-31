@@ -1,5 +1,6 @@
 package by.it.dao;
 
+import by.it.pojos.Adress;
 import by.it.pojos.Employee;
 import org.hibernate.Session;
 import org.junit.Assert;
@@ -45,6 +46,9 @@ public class EmployeeTest  extends  BaseTest{
 
         session.close();
         factory.close();
-       // deleteDataset();
+        deleteDataset();
     }
+
+
+
 }
