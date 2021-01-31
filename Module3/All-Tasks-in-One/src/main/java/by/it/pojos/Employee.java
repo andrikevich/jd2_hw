@@ -5,30 +5,30 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "T_EMPLOYEE")
+@Table
 public class Employee {
 
 
     @Id
     @GenericGenerator(name = "uuid-gen", strategy = "uuid")
     @GeneratedValue(generator = "uuid-gen")
-    @Column(name = "EMPLOYEE_ID")
+    @Column
     private  String employeeId;
 
 
 
     private  String department;
 
-    @Column (name = "LOGIN")
+    @Column
     @Access(AccessType.FIELD)
     private String login;
 
-    @Column(name = "PASSWORD")
+    @Column
     @Access(AccessType.FIELD)
     private String password;
 
     @Transient
-    @Column(name = "PHONE_NUMBER")
+    @Column
     private String phoneNumber;
 
     public Employee(String department, String login, String password, String phoneNumber) {

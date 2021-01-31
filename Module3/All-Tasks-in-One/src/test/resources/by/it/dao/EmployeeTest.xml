@@ -1,9 +1,10 @@
 <dataset>
 
 
-    <T_EMPLOYEE  EMPLOYEE_ID="8a7e5fc2774e186201774e18670a0001"
-               DEPARTMENT="Technical" LOGIN="tech999" PASSWORD="tech_pwd_999"
+    <T_EMPLOYEE  C_EMPLOYEE_ID="8a7e5fc2774e186201774e18670a0001"
+               C_DEPARTMENT="Technical" C_LOGIN="tech999" C_PASSWORD="tech_pwd_999"
 
     />
 
 </dataset>
+
