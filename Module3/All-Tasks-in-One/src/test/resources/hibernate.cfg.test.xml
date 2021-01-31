@@ -10,6 +10,7 @@
         <property name="hibernate.hbm2ddl.auto">create</property>
 
         <mapping class="by.it.pojos.Person"/>
+        <mapping class="by.it.pojos.Employee"/>
 
     </session-factory>
 </hibernate-configuration>

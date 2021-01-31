@@ -10,10 +10,35 @@ import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.ext.mysql.MySqlConnection;
 import org.dbunit.operation.DatabaseOperation;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.junit.After;
+import org.junit.Before;
 
 public abstract class BaseTest {
-
+    SessionFactory factory;
     private final static Logger log = Logger.getLogger(BaseTest.class.getName());
+
+    @Before
+    public void setUp() {
+        final StandardServiceRegistry standardServiceRegistry
+                = new StandardServiceRegistryBuilder()
+                .configure("hibernate.cfg.test.xml")
+                .build();
+
+        factory = new MetadataSources(standardServiceRegistry)
+                .buildMetadata()
+                .buildSessionFactory();
+    }
+
+    @After
+    public void tearDown() {
+        factory.close();
+
+    }
+
 
     private IDatabaseConnection connection;
     private IDataSet dataSet;
