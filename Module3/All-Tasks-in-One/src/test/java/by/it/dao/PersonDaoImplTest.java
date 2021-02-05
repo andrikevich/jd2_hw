@@ -5,8 +5,6 @@ import java.io.Serializable;
 import javax.persistence.PersistenceException;
 
 import org.hibernate.ObjectNotFoundException;
-import org.hibernate.Session;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 

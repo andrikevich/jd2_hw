@@ -12,6 +12,6 @@
         <property name="hibernate.physical_naming_strategy" >by.it.utilities.CustomNamingStrategy</property>
 
         <mapping class="by.it.pojos.Person"/>
-        <mapping class="by.it.pojos.Employee"/>
+        <mapping class="by.it.pojos.BankClient"/>
     </session-factory>
 </hibernate-configuration>

@@ -14,8 +14,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.JOINED)
+
 public class Person implements Serializable {
 
     @Id

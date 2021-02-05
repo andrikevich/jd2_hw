@@ -13,5 +13,6 @@
         <mapping class="by.it.pojos.Person"/>
         <mapping class="by.it.pojos.Employee"/>
 
+
     </session-factory>
 </hibernate-configuration>

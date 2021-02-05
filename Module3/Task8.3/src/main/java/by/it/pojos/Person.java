@@ -14,12 +14,12 @@ import java.io.Serializable;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+
 public class Person implements Serializable {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.TABLE)
     private Integer id;
 
     @Column
