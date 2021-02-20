@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- Template Definition -->
+    <definition name="template-def"
+                template="/WEB-INF/views/tiles/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/views/tiles/menu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp" />
+    </definition>
+
+    <!-- Page-0 -->
+    <definition name="page0" extends="template-def">
+        <put-attribute name="title" value="Task16 Example Page 0" />
+        <put-attribute name="body" value="/WEB-INF/views/page0.jsp" />
+    </definition>
+
+    <!-- Page-1 -->
+    <definition name="page1" extends="template-def">
+        <put-attribute name="title" value="Task16 Example Page 1" />
+        <put-attribute name="body" value="/WEB-INF/views/page1.jsp" />
+    </definition>
+
+    <!-- Page-2 -->
+    <definition name="page2" extends="template-def">
+        <put-attribute name="title" value="Task16 Example Page 2" />
+        <put-attribute name="body" value="/WEB-INF/views/page2.jsp" />
+    </definition>
+
+</tiles-definitions>
